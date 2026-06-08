@@ -36,11 +36,26 @@ while True:
         ball.pos.z += ball.vz * 0.05
         
         # [벽 충돌 중심에서 거리가 5를 벗어나면 속도의 부호를 반대로 바꿔서 튕겨냄
-        if abs(ball.pos.x) > 5: #abs는절대값이라는 의미따라서거리를나타내는거야
-            ball.vx = -ball.vx #그래서절대값이5보다크면벽에부딪혔다는뜻이야그래서마이너스를붙혀서다시돌아가게만들어야해
+        if abs(ball.pos.x) > 5: #abs는절대값이라는 의미 따라서거리를나타내는거야
+            ball.vx = -ball.vx #그래서 절대값이5보다크면벽에부딪혔다는뜻이야 그래서마이너스를붙혀서다시돌아가게만들어야해
             
         if abs(ball.pos.y) > 5:
             ball.vy = -ball.vy #공간은가로세로옆으로이루어져있어서vx,vy,vz모두설정해줘야해
             
         if abs(ball.pos.z) > 5:
             ball.vz = -ball.vz
+            
+    for white_ball in balls: #하얀색공을이용하자
+       
+        if white_ball.color == color.white: #하얀공색을확인해보자정말하얀색인지아닌지
+            
+            for red_ball in balls: #빨간공이정말빨간공이라면!
+                if red_ball.color == color.red: 
+                    
+                    distance = mag(white_ball.pos - red_ball.pos) #하얀색좌표에서빨간색좌푤를빼면거리가나와 #mag는거리를바로계산해주는거야 #distance에결과값을저장해두기
+                    
+                    #거리가 1보다 작으면(부딪히면) 빨간색으로 변경!
+                    if distance <1:
+                        white_ball.color = color.red
+                        
+        
