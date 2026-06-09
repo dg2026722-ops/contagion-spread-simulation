@@ -57,5 +57,5 @@ while True:
                     #거리가 1보다 작으면(부딪히면) 빨간색으로 변경!
                     if distance <1:
                         white_ball.color = color.red
-                        
+                        https://www.glowscript.org/#/user/dg2026722/folder/MyPrograms/program/%EA%B0%90%EC%97%BC%ED%99%95%EC%82%B0%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98%EC%88%98%ED%96%89%ED%8F%89%EA%B0%80%EC%B5%9C%EC%A2%85%EB%B3%B8
         
